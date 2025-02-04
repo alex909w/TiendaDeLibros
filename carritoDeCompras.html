@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-
+beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <h1>Carrito de Compras</h1>
+        <p>Revisa tus productos antes de comprar.</p>
+        <div class="carrito-icono">
+            <a href="index.html" class="back-store">
+                <i class="fas fa-arrow-left"></i> Volver a la tienda
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="carrito" id="carrito">
+            <!-- Los productos del carrito se cargarán aquí dinámicamente -->
+        </section>
+        <section class="resumen">
+            <h2>Resumen del Pedido</h2>
+            <p>Total: <span id="total-carrito">$0.00</span></p>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+        </section>
+    </main>
+    <footer class="pie">
+        <p>&copy; 2025 Tienda de Libros. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+    <script src="./js/loadCarrito.js"></script>
+</body>
+
+</html>

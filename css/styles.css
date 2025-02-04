@@ -1,46 +1,90 @@
-body { 
-    font-family: cursive; 
-    margin: 0; 
-    padding: 0; 
-    background-color: #f9f9f9; 
-    color: #333; 
-    } 
-    .encabezado { 
-    background-color: #000000bd; 
-    color: white; 
-    padding: 20px; 
-    text-align: center; 
-    } 
-    .carrito-icono { 
-    position: fixed; 
-    top: 20px; 
-    right: 40px; 
-    background-color: #07a3a8d2; 
-    padding: 15px; 
-    border-radius: 60%; 
-    cursor: pointer; 
-    } 
-    .productos { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; 
-    padding: 20px; 
-    } 
-    .producto { 
-    background-color: white; 
-    border: 1px solid #ddd; 
-    border-radius: 10px; 
-    padding: 15px; 
-    text-align: center; 
-    } 
-    .producto button { 
-    background-color: #07a3a8d2; 
-    color: white; 
-    border: none; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    } 
-    .producto button:hover { 
-    background-color: #004b92e1; 
-    } 
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.encabezado {
+    background-color: #000000bd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+#contador-carrito {
+    color: white;
+    text-decoration: none;
+}
+
+.back-store {
+    color: white;
+    text-decoration: none;
+}
+
+.fa-shopping-cart {
+    color: white;
+}
+
+.resumen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.carrito-icono {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    background-color: #31D2F2;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.producto button {
+    background-color: #07a3a8d2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: #004b92e1;
+}
+
+.imagen-producto {
+    width: 300px;
+    height: auto;
+}
