@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Libros</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Libros</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="encabezado">
-        <h1>Tienda de Libros</h1>
-        <p>¡Encuentra tus libros favoritos y llévalos contigo!</p>
-        <div class="carrito-icono">
-            <a href="./carritoDeCompras.html">
-                <i class="fas fa-shopping-cart"></i> <span id="contador-carrito">0</span>
-            </a>
-        </div>
-    </header>
+  <header class="encabezado">
+    <h1>Tienda de Libros</h1>
+    <p>¡Encuentra tus libros favoritos y llévalos contigo!</p>
+    <div class="carrito-icono">
+      <a href="carrito.html">
+        <i class="fas fa-shopping-cart"></i> <span id="contador-carrito">0</span>
+      </a>
+    </div>
+  </header>
+  
+  <main>
+    <section class="productos" id="productos">
 
-    <main>
-        <section class="productos" id="productos">
-            <div class="producto">
-                <img src="img/ElPrincipito.jpg" alt="El Principito" class="imagen-producto">
-                <h3>El Principito</h3>
-                <p>Precio: $10.00</p>
-                <p>Disponibles: <span id="cantidad-1">10</span></p>
-                <input type="number" id="cantidad-seleccionada-1" min="1" max="10" value="1">
-                <button onclick="agregarAlCarrito('El Principito', 10, 'cantidad-1', 'cantidad-seleccionada-1')">Agregar</button>
-            </div>
+      <!-- Libros originales -->
 
-            <div class="producto">
-                <img src="img/harry.webp" alt="Harry Potter y la Piedra Filosofal" class="imagen-producto">
-                <h3>Harry Potter y la Piedra Filosofal</h3>
-                <p>Precio: $15.00</p>
-                <p>Disponibles: <span id="cantidad-2">8</span></p>
-                <input type="number" id="cantidad-seleccionada-2" min="1" max="8" value="1">
-                <button onclick="agregarAlCarrito('Harry Potter y la Piedra Filosofal', 15, 'cantidad-2', 'cantidad-seleccionada-2')">Agregar</button>
-            </div>
-        </section>
-    </main>
+      <div class="producto">
+        <img src="img/ElPrincipito.jpg" alt="El Principito" class="imagen-producto">
+        <h3>El Principito</h3>
+        <p>Precio: $10.00</p>
+        <p>Disponibles: <span id="cantidad-1">10</span></p>
+        <input type="number" id="cantidad-seleccionada-1" min="1" max="10" value="1">
+        <button onclick="agregarAlCarrito('El Principito', 10, 'cantidad-1', 'cantidad-seleccionada-1')">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="img/harry.webp" alt="Harry Potter y la Piedra Filosofal" class="imagen-producto">
+        <h3>Harry Potter y la Piedra Filosofal</h3>
+        <p>Precio: $15.00</p>
+        <p>Disponibles: <span id="cantidad-2">8</span></p>
+        <input type="number" id="cantidad-seleccionada-2" min="1" max="8" value="1">
+        <button onclick="agregarAlCarrito('Harry Potter y la Piedra Filosofal', 15, 'cantidad-2', 'cantidad-seleccionada-2')">Agregar</button>
+      </div>
 
-    <footer class="pie">
+      
+    </section>
+</main>
+
+      <footer class="pie">
         <p>&copy; 2025 Tienda de Libros. Todos los derechos reservados.</p>
-    </footer>
-    <script src="js/carrito.js"></script>
-</body>
-</html>
+      </footer>
+    
+      <script src="js/carrito.js"></script>
+    </body>
+    </html>
+    
