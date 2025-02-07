@@ -5,6 +5,8 @@ const productos = [
     { id: 4, nombre: "1984 - George Orwell", precio: 18, stock: 10, imagen: "img/1984.jpg" },
     { id: 5, nombre: "Orgullo y Prejuicio", precio: 14, stock: 5, imagen: "img/OrgulloYPrejuicio.jpg" },
     { id: 6, nombre: "El Señor de los Anillos", precio: 30, stock: 6, imagen: "img/ElSeñorDeLosAnillos.jpg" },
+    { id: 7, nombre: "Matar a un Ruiseñor", precio: 16, stock: 9, imagen: "img/MatarRuiseñor.jpg" },
+    { id: 8, nombre: "Crónica de una muerte anunciada", precio: 12, stock: 8, imagen: "img/CronicaMuerteAnunciada.jpg" }
 ];
 
    let carrito = [];
