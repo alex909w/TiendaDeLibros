@@ -20,64 +20,7 @@
   
   <main>
     <section class="productos" id="productos">
-
-      <!-- Libros originales -->
-
-      <div class="producto">
-        <img src="img/ElPrincipito.jpg" alt="El Principito" class="imagen-producto">
-        <h3>El Principito</h3>
-        <p>Precio: $10.00</p>
-        <p>Disponibles: <span id="cantidad-1">10</span></p>
-        <input type="number" id="cantidad-seleccionada-1" min="1" max="10" value="1">
-        <button onclick="agregarAlCarrito('El Principito', 10, 'cantidad-1', 'cantidad-seleccionada-1')">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="img/harry.webp" alt="Harry Potter y la Piedra Filosofal" class="imagen-producto">
-        <h3>Harry Potter y la Piedra Filosofal</h3>
-        <p>Precio: $15.00</p>
-        <p>Disponibles: <span id="cantidad-2">8</span></p>
-        <input type="number" id="cantidad-seleccionada-2" min="1" max="8" value="1">
-        <button onclick="agregarAlCarrito('Harry Potter y la Piedra Filosofal', 15, 'cantidad-2', 'cantidad-seleccionada-2')">Agregar</button>
-      </div>
-
-      <!-- Nuevos libros añadidos -->
-
-      <div class="producto">
-        <img src="img/CienAñosDeSoledad.jpg" alt="Cien años de soledad" class="imagen-producto">
-        <h3>Cien años de soledad</h3>
-        <p>Precio: $22.00</p>
-        <p>Disponibles: <span id="cantidad-9">7</span></p>
-        <input type="number" id="cantidad-seleccionada-9" min="1" max="7" value="1">
-        <button onclick="agregarAlCarrito('Cien años de soledad', 22, 'cantidad-9', 'cantidad-seleccionada-9')">Agregar</button>
-      </div>
-
-      <div class="producto">
-        <img src="img/1984.jpg" alt="1984 - George Orwell" class="imagen-producto">
-        <h3>1984 - George Orwell</h3>
-        <p>Precio: $18.00</p>
-        <p>Disponibles: <span id="cantidad-10">10</span></p>
-        <input type="number" id="cantidad-seleccionada-10" min="1" max="10" value="1">
-        <button onclick="agregarAlCarrito('1984 - George Orwell', 18, 'cantidad-10', 'cantidad-seleccionada-10')">Agregar</button>
-      </div>
-
-      <div class="producto">
-        <img src="img/OrgulloYPrejuicio.jpg" alt="Orgullo y Prejuicio" class="imagen-producto">
-        <h3>Orgullo y Prejuicio</h3>
-        <p>Precio: $14.00</p>
-        <p>Disponibles: <span id="cantidad-11">5</span></p>
-        <input type="number" id="cantidad-seleccionada-11" min="1" max="5" value="1">
-        <button onclick="agregarAlCarrito('Orgullo y Prejuicio', 14, 'cantidad-11', 'cantidad-seleccionada-11')">Agregar</button>
-      </div>
-
-      <div class="producto">
-        <img src="img/ElSeñorDeLosAnillos.jpg" alt="El Señor de los Anillos" class="imagen-producto">
-        <h3>El Señor de los Anillos</h3>
-        <p>Precio: $30.00</p>
-        <p>Disponibles: <span id="cantidad-12">6</span></p>
-        <input type="number" id="cantidad-seleccionada-12" min="1" max="6" value="1">
-        <button onclick="agregarAlCarrito('El Señor de los Anillos', 30, 'cantidad-12', 'cantidad-seleccionada-12')">Agregar</button>
-      </div>
-
+      <!-- Los productos se cargarán dinámicamente aquí -->
     </section>
 </main>
 
@@ -85,7 +28,7 @@
         <p>&copy; 2025 Tienda de Libros. Todos los derechos reservados.</p>
       </footer>
     
+      <script src="js/logicaJson.js"></script>
       <script src="js/carrito.js"></script>
     </body>
     </html>
-    

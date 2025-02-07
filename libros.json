@@ -1,0 +1,124 @@
+{
+    "libros": [
+      {
+        "img": "/img/CienAñosDeSoledad.jpg",
+        "titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+        "categoria": "Ficción",
+        "precio": 25.99,
+        "cantidad": 150
+      },
+      {
+        "img": "/img/1984.jpg",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "categoria": "Ciencia Ficción",
+        "precio": 19.99,
+        "cantidad": 200
+      },
+      {
+        "img": "https://imagedelivery.net/QDkyDSqaJI1JEO0MqH_3SQ/c30021a6-1830-43b3-30c8-26c6f0d49e00/default",
+        "titulo": "El Hobbit",
+        "autor": "J.R.R. Tolkien",
+        "categoria": "Fantasía",
+        "precio": 22.50,
+        "cantidad": 100
+      },
+      {
+        "img": "https://m.media-amazon.com/images/I/71PR0C4XNjL._AC_UF894,1000_QL80_.jpg",
+        "titulo": "El código Da Vinci",
+        "autor": "Dan Brown",
+        "categoria": "Misterio",
+        "precio": 18.95,
+        "cantidad": 120
+      },
+      {
+        "img": "https://internacionallibrosyregalos.com/cdn/shop/products/ORGULLOYPREJUICIO_d8838bbb-a901-4956-aaee-dac18ff2bc4f_341x.jpg?v=1641419436",
+        "titulo": "Orgullo y prejuicio",
+        "autor": "Jane Austen",
+        "categoria": "Romance",
+        "precio": 15.99,
+        "cantidad": 180
+      },
+      {
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpCjjXwhX01oqqkq11nBYtMR9b9xB6yUrGw&s",
+        "titulo": "It",
+        "autor": "Stephen King",
+        "categoria": "Terror",
+        "precio": 24.00,
+        "cantidad": 90
+      },
+      {
+        "img": "https://m.media-amazon.com/images/I/71JFMQYhn7L._UF1000,1000_QL80_.jpg",
+        "titulo": "Sapiens",
+        "autor": "Yuval Noah Harari",
+        "categoria": "No Ficción",
+        "precio": 29.99,
+        "cantidad": 200
+      },
+      {
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Nw9anmja6dsSOz1EKRyiXNIyMqp4h-JVkA&s",
+        "titulo": "Juego de Tronos",
+        "autor": "George R.R. Martin",
+        "categoria": "Fantasía",
+        "precio": 27.50,
+        "cantidad": 80
+      },
+      {
+        "img": "https://www.planetadelibros.com/usuaris/libros/fotos/197/original/la-chica-del-tren_9788408141471_contra.jpg",
+        "titulo": "La chica del tren",
+        "autor": "Paula Hawkins",
+        "categoria": "Misterio",
+        "precio": 16.75,
+        "cantidad": 130
+      },
+      {
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmh3-CP1koEiGbfJ4JqTVFPkarjYbdgsO09A&s",
+        "titulo": "El alquimista",
+        "autor": "Paulo Coelho",
+        "categoria": "Autoayuda",
+        "precio": 14.99,
+        "cantidad": 170
+      },
+      {
+        "img": "https://tunovela.es/wp-content/uploads/71e4kjCsuAL.jpg",
+        "titulo": "Los juegos del hambre",
+        "autor": "Suzanne Collins",
+        "categoria": "Juvenil",
+        "precio": 20.00,
+        "cantidad": 160
+      },
+      {
+        "img": "https://i5.walmartimages.com/seo/The-Twilight-Saga-Twilight-Series-1-Hardcover-9780316160179_27a4a036-ad13-499b-adb4-dfcb31f5c072.41d52f9b1e884199a7d15e083be579f3.jpeg",
+        "titulo": "Crepúsculo",
+        "autor": "Stephenie Meyer",
+        "categoria": "Romance",
+        "precio": 17.25,
+        "cantidad": 140
+      },
+      {
+        "img": "https://m.media-amazon.com/images/I/61mU3KjkmwL._AC_UF1000,1000_QL80_.jpg",
+        "titulo": "Steve Jobs",
+        "autor": "Walter Isaacson",
+        "categoria": "Biografía",
+        "precio": 23.45,
+        "cantidad": 110
+      },
+      {
+        "img": "https://m.media-amazon.com/images/I/61HSZIxRXjL.jpg",
+        "titulo": "El arte de la guerra",
+        "autor": "Sun Tzu",
+        "categoria": "Política",
+        "precio": 12.99,
+        "cantidad": 190
+      },
+      {
+        "img": "https://m.media-amazon.com/images/I/81fU9JfDChL._AC_UF894,1000_QL80_.jpg",
+        "titulo": "Cocina para principiantes",
+        "autor": "María García",
+        "categoria": "Cocina",
+        "precio": 21.30,
+        "cantidad": 200
+      }
+    ]
+  }

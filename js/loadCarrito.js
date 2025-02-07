@@ -12,17 +12,17 @@ function cargarCarrito() {
     total += subtotal;
     html += `
       <div class="item-carrito">
-          <img src="${item.imagen}" alt="${item.nombre}" class="imagen-carrito">
+          <img src="${item.img}" alt="${item.titulo}" class="imagen-carrito">
           <div class="info-carrito">
-              <h3>${item.nombre}</h3>
+              <h3>${item.titulo}</h3>
               <p>Precio unitario: $${item.precio.toFixed(2)}</p>
               <p>Cantidad: ${item.cantidad}</p>
               <p>Subtotal: $${subtotal.toFixed(2)}</p>
               <button onclick="reducirCantidad('${
-                item.nombre
+                item.titulo
               }')">Reducir cantidad</button>
               <button onclick="aumentarCantidad('${
-                item.nombre
+                item.titulo
               }')">Aumentar cantidad</button>
           </div>
       </div>
@@ -72,7 +72,7 @@ function finalizarCompra() {
 function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contador = carrito.reduce((total, item) => total + item.cantidad, 0);
-  document.getElementById("contador-carrito").textContent = contador;
+  document.getElementById("carrito").textContent = contador;
 }
 
 // Cargar el carrito al abrir la página
