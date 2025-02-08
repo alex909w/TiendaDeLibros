@@ -47,7 +47,7 @@ async function mostrarLibrosEnTienda() {
                     <p>Autor: ${libro.autor}</p>
                     <p>Precio: $${libro.precio.toFixed(2)}</p>
                     <p>Disponibles: <span id="cantidad-${index}">${libro.cantidad}</span></p>
-                    <input type="number" id="cantidad-seleccionada-${index}" 
+                    <input type="number" class="form-controls" id="cantidad-seleccionada-${index}" 
                         min="1" max="${libro.cantidad}" value="1">
                     <button onclick="actualizarInventario(${index})">
                         Agregar al carrito

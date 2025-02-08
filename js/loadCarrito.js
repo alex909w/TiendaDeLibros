@@ -18,10 +18,10 @@ function cargarCarrito() {
               <p>Precio unitario: $${item.precio.toFixed(2)}</p>
               <p>Cantidad: ${item.cantidad}</p>
               <p>Subtotal: $${subtotal.toFixed(2)}</p>
-              <button onclick="reducirCantidad('${
+              <button class = "btn-reduce-custom" onclick="reducirCantidad('${
                 item.titulo
               }')">Reducir cantidad</button>
-              <button onclick="aumentarCantidad('${
+              <button class = "btn-add-custom" onclick="aumentarCantidad('${
                 item.titulo
               }')">Aumentar cantidad</button>
           </div>

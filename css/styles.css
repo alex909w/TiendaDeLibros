@@ -60,6 +60,52 @@ a {
     font-weight: bold;
 }
 
+.btn-reduce-custom {
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    border: none;
+    background-color: #B42B39;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin: 0.3rem;
+}
+.btn-reduce-custom:hover {
+    background-color: #781C26;
+}
+
+.btn-add-custom {
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    border: none;
+    background-color: #5B6168;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin: 0.3rem;
+}
+
+.btn-add-custom:hover {
+    background-color: #91959A;
+}
+
+.btn-finalizar {
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    border: none;
+    background-color: #146D43;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.btn-finalizar:hover {
+    background-color: #629D81;
+}
+
 .fa-shopping-cart {
     color: white;
 }
@@ -74,6 +120,13 @@ a {
 .imagen-carrito {
     height: auto;
     width: 200px;
+    border-radius: 10px;
+}
+
+.show-carrito {
+    height: auto;
+    width: 200px;
+    border-radius: 10px;
 }
 
 .card {
@@ -291,74 +344,6 @@ main {
     transform: translateY(-2px);
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive design */
-@media (max-width: 1024px) {
-    .productos {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .encabezado h1 {
-        font-size: 2rem;
-    }
-
-    .carrito-icono {
-        top: 10px;
-        right: 20px;
-    }
-
-    .productos {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .libro-imagen {
-        height: 320px;
-    }
-
-    .item-carrito {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .item-imagen {
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
-    .carrito-resumen {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    main {
-        padding: 0 1rem;
-    }
-
-    .productos {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .libro-card {
-        max-width: 100%;
-    }
-}
-
 .producto {
     background-color: white;
     border: 1px solid #ddd;
@@ -381,8 +366,23 @@ main {
 }
 
 .imagen-producto {
-    width: 300px;
+    width: 280px;
     height: auto;
+    border-radius: 10px;
+}
+
+.form-controls {
+    height: 23px;
+    border: 1px solid #91959A;
+    border-radius: 10px;   
+}
+
+.producto > input {
+    padding: 0.4rem;
+}
+
+.form-controls:focus {
+    outline: none; /* Quita el borde azul predeterminado en algunos navegadores */
 }
 
 /* Estilos del Carrito */
@@ -517,20 +517,98 @@ main {
     margin: 0.5rem 0 0 0;
 }
 
-.btn-finalizar {
-    background: linear-gradient(135deg, #31D2F2 0%, #2BB0ED 100%);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.btn-finalizar:hover {
-    background: linear-gradient(135deg, #2BB0ED 0%, #1992D4 100%);
-    transform: translateY(-2px);
+@media (max-width: 1360px) {
+    .imagen-producto {
+        width: 190px;
+    }
+    .productos {
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .productos {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+    .imagen-producto {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezado h1 {
+        font-size: 2rem;
+    }
+
+    .carrito-inventario {
+        top: 10px;
+        right: 110px;
+    }
+
+    .carrito-icono {
+        top: 10px;
+        right: 20px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .libro-imagen {
+        height: 320px;
+    }
+
+    .item-carrito {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .item-imagen {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .carrito-resumen {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 634px) {
+    .productos {
+        grid-template-columns: repeat(1, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+    .imagen-producto {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .libro-card {
+        max-width: 100%;
+    }
 }
