@@ -33,18 +33,6 @@ function cargarCarrito() {
   totalCarrito.textContent = `$${total.toFixed(2)}`;
 }
 
-// Función para incrementar la cantidad de un productos en el carrito.
-function aumentarCantidad(titulo) {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  let producto = carrito.find((item) => item.nombre === nombre);
-
-  if (producto) {
-    producto.cantidad++;
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    cargarCarrito();
-  }
-}
-
 // Función para incrementar la cantidad de un producto en el carrito.
 function aumentarCantidad(titulo) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -78,6 +66,13 @@ function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contador = carrito.reduce((total, item) => total + item.cantidad, 0);
   document.getElementById("carrito").textContent = contador;
+}
+
+// Función para finalizar la compra
+function finalizarCompra() {
+  alert("¡Gracias por tu compra!");
+  localStorage.removeItem("carrito");
+  window.location.href = "index.html";
 }
 
 // Cargar el carrito al abrir la página
