@@ -33,10 +33,10 @@ function cargarCarrito() {
   totalCarrito.textContent = `$${total.toFixed(2)}`;
 }
 
-// Función para incrementar la cantidad de un productos en el carrito.
-function aumentarCantidad(nombre) {
+// Función para incrementar la cantidad de un producto en el carrito.
+function aumentarCantidad(titulo) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  let producto = carrito.find((item) => item.nombre === nombre);
+  let producto = carrito.find((item) => item.titulo === titulo);
 
   if (producto) {
     producto.cantidad++;
@@ -45,27 +45,20 @@ function aumentarCantidad(nombre) {
   }
 }
 
-// Función para reducir la cantidad de un productos en el carrito.
-function reducirCantidad(nombre) {
+// Función para reducir la cantidad de un producto en el carrito.
+function reducirCantidad(titulo) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  let productoIndex = carrito.findIndex((item) => item.nombre === nombre);
+  let productoIndex = carrito.findIndex((item) => item.titulo === titulo);
 
   if (productoIndex !== -1) {
     if (carrito[productoIndex].cantidad > 1) {
       carrito[productoIndex].cantidad--;
     } else {
-      carrito.splice(productoIndex, 1);
+      carrito.splice(productoIndex, 1); // Eliminar producto si la cantidad llega a 0
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
     cargarCarrito();
   }
-}
-
-// Función para finalizar la compra
-function finalizarCompra() {
-  alert("¡Gracias por tu compra!");
-  localStorage.removeItem("carrito");
-  window.location.href = "index.html";
 }
 
 // Función para actualizar el contador del carrito
@@ -73,6 +66,13 @@ function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contador = carrito.reduce((total, item) => total + item.cantidad, 0);
   document.getElementById("carrito").textContent = contador;
+}
+
+// Función para finalizar la compra
+function finalizarCompra() {
+  alert("¡Gracias por tu compra!");
+  localStorage.removeItem("carrito");
+  window.location.href = "index.html";
 }
 
 // Cargar el carrito al abrir la página

@@ -42,23 +42,16 @@ function debugLocalStorage() {
 
 function agregarAlCarrito(item) {
     try {
-        // Verificar que tenemos todos los datos necesarios
-        console.log('Datos recibidos:', item);
-        
         if (!item || !item.titulo || !item.precio || !item.cantidad) {
             throw new Error('Datos incompletos del libro');
         }
 
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        
-        // Verificar si el libro ya existe en el carrito
         const index = carrito.findIndex(i => i.titulo === item.titulo);
-        
+
         if (index !== -1) {
-            // Si existe, actualizar cantidad
             carrito[index].cantidad += item.cantidad;
         } else {
-            // Si no existe, agregar nuevo item
             carrito.push({
                 titulo: item.titulo,
                 precio: parseFloat(item.precio),
@@ -67,16 +60,14 @@ function agregarAlCarrito(item) {
                 autor: item.autor || 'Autor desconocido'
             });
         }
-        
+
         localStorage.setItem('carrito', JSON.stringify(carrito));
         actualizarContadorCarrito();
-        debugLocalStorage(); // Depurar estado después de agregar
         return true;
 
     } catch (error) {
         console.error('Error al agregar al carrito:', error);
-        console.error('Datos del item:', item);
-        alert('Hubo un error al agregar al carrito');
+        alert('Hubo un error al agregar al carrito: ' + error.message);
         return false;
     }
 }
