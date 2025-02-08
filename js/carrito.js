@@ -5,6 +5,41 @@ function debugLocalStorage() {
     console.log('Carrito:', JSON.parse(localStorage.getItem('carrito')));
 }
 
+document.getElementById('btnAgregar').addEventListener('click', function() {
+    const titulo = document.getElementById('titulo').value.trim();
+    const autor = document.getElementById('autor').value.trim();
+    const precio = document.getElementById('precio').value;
+    const cantidad = document.getElementById('cantidad').value;
+
+    // Validar que los campos requeridos no estén vacíos
+    if (!titulo || !precio || !cantidad) {
+        alert('Por favor, completa todos los campos obligatorios.');
+        return;
+    }
+
+    const libro = {
+        titulo: titulo,
+        autor: autor || 'Autor desconocido',
+        precio: parseFloat(precio),
+        cantidad: parseInt(cantidad),
+        img: '' // Puedes agregar lógica para incluir una imagen si es necesario
+    };
+
+    // Llamar a la función para agregar al carrito
+    if (agregarAlCarrito(libro)) {
+        alert('Libro agregado al carrito correctamente.');
+    }
+});
+
+function actualizarContadorCarrito() {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    console.log(`Carrito actualizado. Total de libros: ${carrito.length}`);
+}
+
+function debugLocalStorage() {
+    console.log('Estado actual del carrito:', localStorage.getItem('carrito'));
+}
+
 function agregarAlCarrito(item) {
     try {
         // Verificar que tenemos todos los datos necesarios
