@@ -68,11 +68,19 @@ function actualizarContadorCarrito() {
   document.getElementById("carrito").textContent = contador;
 }
 
-// Función para finalizar la compra
+// Función para finalizar la compra y opciones de generar factura
 function finalizarCompra() {
-  alert("¡Gracias por tu compra!");
-  localStorage.removeItem("carrito");
-  window.location.href = "index.html";
+  Swal.fire({
+    title: "¡Compra realizada!", 
+    text: "Gracias por tu compra. ¿Deseas generar la factura?",
+    icon: "success",
+    showCancelButton: true,
+    confirmButtonText: "Sí, generar factura",
+    cancelButtonText: "No, volver al inicio"
+}).then(() => {
+    localStorage.removeItem("carrito");
+    window.location.href = "index.html";
+  });
 }
 
 // Cargar el carrito al abrir la página
