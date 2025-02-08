@@ -71,6 +71,11 @@ a {
     flex-direction: column;
 }
 
+.imagen-carrito {
+    height: auto;
+    width: 200px;
+}
+
 .card {
     margin-top: 2rem;
     background-color: #f0f2f5;
