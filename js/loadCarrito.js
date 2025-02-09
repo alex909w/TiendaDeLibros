@@ -77,7 +77,10 @@ function finalizarCompra() {
     showCancelButton: true,
     confirmButtonText: "Sí, generar factura",
     cancelButtonText: "No, volver al inicio"
-}).then(() => {
+  }).then((result) => {
+    if (result.isConfirmed) {
+      generarFacturaPDF();
+    }
     localStorage.removeItem("carrito");
     window.location.href = "index.html";
   });
