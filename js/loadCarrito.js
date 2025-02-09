@@ -109,6 +109,12 @@ function generarFacturaPDF() {
     doc.text(`${item.titulo} - Cantidad: ${item.cantidad} - Precio unitario: $${item.precio.toFixed(2)} - Subtotal: $${subtotal.toFixed(2)}`, 10, y);
     y += 10;
   });
-  
+   // Agregar el total de la compra
+  doc.setFontSize(14);
+  doc.text(`Total: $${total.toFixed(2)}`, 10, y + 10);
+
+  // Guardar el factura en PDF
+  doc.save("factura.pdf");
+}
 // Cargar el carrito al abrir la página
 document.addEventListener("DOMContentLoaded", cargarCarrito);
