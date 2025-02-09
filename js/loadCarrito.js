@@ -85,6 +85,13 @@ function finalizarCompra() {
     window.location.href = "index.html";
   });
 }
+// Función para generar el PDF de la factura
+function generarFacturaPDF() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const total = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
 
+  // Crear un nuevo documento PDF
+  const doc = new jspdf.jsPDF();
+  
 // Cargar el carrito al abrir la página
 document.addEventListener("DOMContentLoaded", cargarCarrito);
