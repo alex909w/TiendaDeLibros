@@ -30,6 +30,10 @@ body {
     color: #e2e8f0;
 }
 
+.table-datos {
+    margin: 1.5rem;
+}
+
 .item-carrito {
     display: flex;
     align-items: center;

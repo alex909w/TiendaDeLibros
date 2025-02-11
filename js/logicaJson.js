@@ -88,9 +88,34 @@ function actualizarInventario(index) {
         });
 
         // Mostrar mensaje de éxito
-        alert(`Se agregaron ${cantidadSeleccionada} unidades de "${libro.titulo}" al carrito`);
+        Swal.fire({
+            title: "The Internet?",
+            text: "That thing is still around?",
+            icon: "question"
+        });
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: `Se agregaron ${cantidadSeleccionada} unidades de "${libro.titulo}" al carrito`
+          });
+
     } else {
-        alert('No hay suficiente stock disponible');
+        Swal.fire({
+            title: "Ya no se encuentra mas unidades en stock!",
+            icon: "error",
+            draggable: true
+        });
     }
 }
 
