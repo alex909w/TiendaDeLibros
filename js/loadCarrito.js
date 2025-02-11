@@ -77,11 +77,44 @@ function finalizarCompra() {
     showCancelButton: true,
     confirmButtonText: "Sí, generar factura",
     cancelButtonText: "No, volver al inicio"
-}).then(() => {
+  }).then((result) => {
+    if (result.isConfirmed) {
+      generarFacturaPDF();
+    }
     localStorage.removeItem("carrito");
     window.location.href = "index.html";
   });
 }
+// Función para generar el PDF de la factura
+function generarFacturaPDF() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const total = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
 
+  // Crear un nuevo documento PDF
+  const doc = new jspdf.jsPDF();
+
+  // Agregar el título de la factura
+  doc.setFontSize(18);
+  doc.text("Factura de Compra", 10, 10);
+
+  // Agregar la fecha de la compra
+  const fecha = new Date().toLocaleDateString();
+  doc.setFontSize(12);
+  doc.text(`Fecha: ${fecha}`, 10, 20);
+
+  // Agregar los detalles de los productos
+  let y = 30;
+  carrito.forEach((item) => {
+    const subtotal = item.precio * item.cantidad;
+    doc.text(`${item.titulo} - Cantidad: ${item.cantidad} - Precio unitario: $${item.precio.toFixed(2)} - Subtotal: $${subtotal.toFixed(2)}`, 10, y);
+    y += 10;
+  });
+   // Agregar el total de la compra
+  doc.setFontSize(14);
+  doc.text(`Total: $${total.toFixed(2)}`, 10, y + 10);
+
+  // Guardar el factura en PDF
+  doc.save("factura.pdf");
+}
 // Cargar el carrito al abrir la página
 document.addEventListener("DOMContentLoaded", cargarCarrito);
