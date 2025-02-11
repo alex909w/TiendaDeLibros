@@ -1,7 +1,7 @@
 {
     "libros": [
       {
-        "img": "/img/CienAñosDeSoledad.jpg",
+        "img": "https://www.rae.es/sites/default/files/portada_cien_anos_de_soledad_0.jpg",
         "titulo": "Cien años de soledad",
         "autor": "Gabriel García Márquez",
         "categoria": "Ficción",
@@ -9,7 +9,7 @@
         "cantidad": 150
       },
       {
-        "img": "/img/1984.jpg",
+        "img": "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/fotos/330/original/portada_1984_george-orwell_202102151044.jpg",
         "titulo": "1984",
         "autor": "George Orwell",
         "categoria": "Ciencia Ficción",
