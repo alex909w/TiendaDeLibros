@@ -105,6 +105,10 @@ function mostrarLibrosEnTabla() {
     });
 }
 
+function buscarLibro() {
+
+}
+
 function eliminarLibro(index) {
     try {
         let data = JSON.parse(localStorage.getItem('libros')) || { libros: [] };
