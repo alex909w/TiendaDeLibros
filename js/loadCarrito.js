@@ -90,31 +90,82 @@ function generarFacturaPDF() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const total = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
 
-  // Crear un nuevo documento PDF
+  // Crear documento PDF
   const doc = new jspdf.jsPDF();
-
-  // Agregar el título de la factura
-  doc.setFontSize(18);
-  doc.text("Factura de Compra", 10, 10);
-
-  // Agregar la fecha de la compra
-  const fecha = new Date().toLocaleDateString();
+  
+  // Configurar fuentes y estilos
+  doc.setFont("helvetica");
+  
+  // Encabezado con datos de la tienda
+  doc.setFontSize(22);
+  doc.text("El Binario", 105, 20, {align: "center"});
   doc.setFontSize(12);
-  doc.text(`Fecha: ${fecha}`, 10, 20);
+  doc.text("Librería Especializada", 105, 28, {align: "center"});
+  doc.setFontSize(10);
+  doc.text([
+    "Calle Principal #123",
+    "Tel: (555) 123-4567",
+    "Email: contacto@elbinario.com",
+    "www.elbinario.com"
+  ], 105, 35, {align: "center"});
 
-  // Agregar los detalles de los productos
-  let y = 30;
+  // Línea divisoria
+  doc.line(20, 50, 190, 50);
+
+  // Información de la factura
+  doc.setFontSize(14);
+  doc.text("FACTURA", 20, 60);
+  
+  const fecha = new Date().toLocaleDateString();
+  const numeroFactura = Date.now().toString().slice(-8);
+  doc.setFontSize(10);
+  doc.text([
+    `Fecha: ${fecha}`,
+    `N° Factura: ${numeroFactura}`
+  ], 20, 70);
+
+  // Tabla de productos
+  doc.setFontSize(11);
+  let y = 90;
+  
+  // Encabezados de tabla
+  doc.setFont("helvetica", "bold");
+  doc.text("Producto", 20, y);
+  doc.text("Cant.", 120, y);
+  doc.text("Precio Unit.", 140, y);
+  doc.text("Subtotal", 170, y);
+  
+  // Línea bajo encabezados
+  y += 2;
+  doc.line(20, y, 190, y);
+  y += 10;
+
+  // Productos
+  doc.setFont("helvetica", "normal");
   carrito.forEach((item) => {
     const subtotal = item.precio * item.cantidad;
-    doc.text(`${item.titulo} - Cantidad: ${item.cantidad} - Precio unitario: $${item.precio.toFixed(2)} - Subtotal: $${subtotal.toFixed(2)}`, 10, y);
-    y += 10;
+    doc.text(item.titulo, 20, y);
+    doc.text(item.cantidad.toString(), 120, y);
+    doc.text(`$${item.precio.toFixed(2)}`, 140, y);
+    doc.text(`$${subtotal.toFixed(2)}`, 170, y);
+    y += 8;
   });
-   // Agregar el total de la compra
-  doc.setFontSize(14);
-  doc.text(`Total: $${total.toFixed(2)}`, 10, y + 10);
 
-  // Guardar el factura en PDF
-  doc.save("factura.pdf");
+  // Total
+  y += 5;
+  doc.line(20, y, 190, y);
+  y += 10;
+  doc.setFont("helvetica", "bold");
+  doc.text(`Total: $${total.toFixed(2)}`, 170, y);
+
+  // Pie de página
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.text("¡Gracias por su compra!", 105, 270, {align: "center"});
+  doc.text("* Este documento es una factura simplificada", 105, 275, {align: "center"});
+
+  // Guardar PDF
+  doc.save("factura_ElBinario.pdf");
 }
 // Cargar el carrito al abrir la página
 document.addEventListener("DOMContentLoaded", cargarCarrito);

@@ -38,24 +38,40 @@ body {
 }
 
 .buscador input {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 5px;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    margin-right: 8px;
     width: 300px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.buscador input:focus {
+    outline: none;
+    border-color: #31D2F2;
+    box-shadow: 0 0 0 3px rgba(49, 210, 242, 0.2);
 }
 
 .buscador button {
-    padding: 8px 15px;
-    background-color: #4CAF50;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #31D2F2 0%, #2BB0ED 100%);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .buscador button:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, #2BB0ED 0%, #1992D4 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .table-datos {

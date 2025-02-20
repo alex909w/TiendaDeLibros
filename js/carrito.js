@@ -192,7 +192,6 @@ function finalizarCompra() {
     }
 
     if (confirm('¿Deseas finalizar tu compra?')) {
-        // Aquí podrías agregar lógica adicional para el proceso de pago
         localStorage.setItem('carrito', JSON.stringify([]));
         alert('¡Gracias por tu compra!');
         mostrarItemsCarrito();
