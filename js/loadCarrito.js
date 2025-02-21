@@ -81,6 +81,13 @@ function actualizarContadorCarrito() {
 
 // Función para finalizar la compra y opciones de generar factura
 function finalizarCompra() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  if (carrito.length === 0) {
+    alert("El carrito está vacío");
+    return;
+  }
+
   Swal.fire({
     title: "¡Compra realizada!", 
     text: "Gracias por tu compra. ¿Deseas generar la factura?",
@@ -90,12 +97,16 @@ function finalizarCompra() {
     cancelButtonText: "No, volver al inicio"
   }).then((result) => {
     if (result.isConfirmed) {
-      generarFacturaPDF();
+      generarFacturaPDF(carrito); 
     }
-    localStorage.removeItem("carrito");
-    window.location.href = "index.html";
+
+    localStorage.removeItem("carrito"); 
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1000); 
   });
 }
+
 // Función para generar el PDF de la factura
 function generarFacturaPDF() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
