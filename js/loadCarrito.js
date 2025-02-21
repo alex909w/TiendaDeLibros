@@ -5,11 +5,11 @@ function cargarCarrito() {
   const totalCarrito = document.getElementById("total-carrito");
 
   let html = "";
-  let total = 0;
+  let subtotalGeneral = 0;
 
   carrito.forEach((item) => {
     const subtotal = item.precio * item.cantidad;
-    total += subtotal;
+    subtotalGeneral += subtotal;
     html += `
       <div class="item-carrito">
           <img src="${item.img}" alt="${item.titulo}" class="imagen-carrito">
@@ -28,6 +28,17 @@ function cargarCarrito() {
       </div>
       `;
   });
+
+  const iva = subtotalGeneral * 0.13;
+  const total = subtotalGeneral + iva;
+
+  html += `
+    <div class="resumen-total">
+      <p>Subtotal: $${subtotalGeneral.toFixed(2)}</p>
+      <p>IVA (13%): $${iva.toFixed(2)}</p>
+      <p><strong>Total con IVA: $${total.toFixed(2)}</strong></p>
+    </div>
+  `;
 
   contenedorCarrito.innerHTML = html;
   totalCarrito.textContent = `$${total.toFixed(2)}`;
@@ -88,7 +99,9 @@ function finalizarCompra() {
 // Función para generar el PDF de la factura
 function generarFacturaPDF() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const total = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
+  const subtotal = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
+  const iva = subtotal * 0.13;
+  const total = subtotal + iva;
 
   // Crear documento PDF
   const doc = new jspdf.jsPDF();
@@ -156,6 +169,10 @@ function generarFacturaPDF() {
   doc.line(20, y, 190, y);
   y += 10;
   doc.setFont("helvetica", "bold");
+  doc.text(`Subtotal: $${subtotal.toFixed(2)}`, 170, y);
+  y += 8;
+  doc.text(`IVA (13%): $${iva.toFixed(2)}`, 170, y);
+  y += 8;
   doc.text(`Total: $${total.toFixed(2)}`, 170, y);
 
   // Pie de página
