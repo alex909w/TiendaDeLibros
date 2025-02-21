@@ -18,25 +18,32 @@ function cargarCarrito() {
               <p>Precio unitario: $${item.precio.toFixed(2)}</p>
               <p>Cantidad: ${item.cantidad}</p>
               <p>Subtotal: $${subtotal.toFixed(2)}</p>
-              <button class = "btn-reduce-custom" onclick="reducirCantidad('${
-                item.titulo
-              }')">Reducir cantidad</button>
-              <button class = "btn-add-custom" onclick="aumentarCantidad('${
-                item.titulo
-              }')">Aumentar cantidad</button>
+              <button class="btn-reduce-custom" onclick="reducirCantidad('${item.titulo}')">Reducir cantidad</button>
+              <button class="btn-add-custom" onclick="aumentarCantidad('${item.titulo}')">Aumentar cantidad</button>
           </div>
       </div>
-      `;
+    `;
   });
 
   const iva = subtotalGeneral * 0.13;
   const total = subtotalGeneral + iva;
 
   html += `
-    <div class="resumen-total">
-      <p>Subtotal: $${subtotalGeneral.toFixed(2)}</p>
-      <p>IVA (13%): $${iva.toFixed(2)}</p>
-      <p><strong>Total con IVA: $${total.toFixed(2)}</strong></p>
+    <div class="contenedor-tabla">
+      <table class="tabla-resumen">
+        <tr>
+          <td>Subtotal</td>
+          <td>$${subtotalGeneral.toFixed(2)}</td>
+        </tr>
+        <tr>
+          <td>IVA (13%)</td>
+          <td>$${iva.toFixed(2)}</td>
+        </tr>
+        <tr>
+          <td><strong>Total con IVA</strong></td>
+          <td><strong>$${total.toFixed(2)}</strong></td>
+        </tr>
+      </table>
     </div>
   `;
 

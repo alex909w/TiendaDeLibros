@@ -562,16 +562,35 @@ main {
     color: #2d3748;
 }
 
-.resumen-total h3 {
-    margin: 0;
-    font-size: 1.25rem;
+.contenedor-tabla {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.resumen-total p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2c5282;
-    margin: 0.5rem 0 0 0;
+.tabla-resumen {
+    width: 50%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-resumen th, .tabla-resumen td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-resumen tr:last-child td {
+    border-bottom: none;
+    font-size: 18px;
+}
+
+.tabla-resumen td strong {
+    color: #282aa7;
+    font-size: 18px;
 }
 
 /* Animaciones */
