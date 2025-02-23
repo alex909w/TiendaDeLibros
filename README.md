@@ -10,6 +10,24 @@ en esta parte Se debe de selaccionar la cantidad de Libros a comprar y dar clic 
 
 ![Index y mensaje de carga](img/readme/002.png)
 
+## Inventario
+
+Veamos el siguiente formilario, cuenta con un formulario donde podemos ver los campos de Titulo, Autor, Categoría, Precio, Cantidad y URL de la imagen.
+
+![Formulario de inventario](img/readme/003.png)
+
+Al llenar los datos del formulario tomamos en cuenta que utilzaremos la url de de la imagen de la portada del libro que se visualizará en la página principal, es importante llenar el formulario a como se muestra en el siguiente ejemplo:
+
+![Formulario de inventario con datos](img/readme/004.png)
+
+Una vez finalizado, podemos darle click en el boton verde de Agregar y tendríamos la siguiente alerta éxito:
+
+![Alerta de libro agregado con éxito](img/readme/005.png)
+
+Ahora podemos volver a la página principal y visualizar el último libro que acabamos de agregar con los datos que ingresamos en el formulario:
+
+![Libro agregado desde el inventario](img/readme/006.png)
+
 ## Factura
 El siguiente enunciado muestra la parte que genera la factura. Despues de dar click en finalizar compra, se le muestra al usuario un menu donde puede generar factura o volver a la pagina principal. 
 
