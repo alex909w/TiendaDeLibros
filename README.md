@@ -28,6 +28,11 @@ Ahora podemos volver a la página principal y visualizar el último libro que ac
 
 ![Libro agregado desde el inventario](img/readme/006.png)
 
+## Carrito
+El siguiente enunciado muestra las opcciones disponibles para poder manipular los productos seleccionados. Se puede agregar 1 o más libros o eliminar si así se desea.
+
+![Libro agregado desde el inventario](img/readme/007.png)
+
 ## Factura
 El siguiente enunciado muestra la parte que genera la factura. Despues de dar click en finalizar compra, se le muestra al usuario un menu donde puede generar factura o volver a la pagina principal. 
 
